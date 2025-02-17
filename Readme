@@ -1,0 +1,4 @@
+start db 
+
+
+/Users/ankittiwari/mongodb/bin/mongod --dbpath=/Users/ankittiwari/mongodb-data
