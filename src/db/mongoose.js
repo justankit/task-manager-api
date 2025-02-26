@@ -1,6 +1,6 @@
 const mongooose = require("mongoose");
 const validator = require("validator");
-const url = "mongodb://localhost:27017/task-manager-api";
+const url = process.env.MONGODB_URL;
 
 mongooose.connect(url);
 
