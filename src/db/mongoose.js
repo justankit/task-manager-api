@@ -1,8 +1,20 @@
-const mongooose = require("mongoose");
+const mongoose = require("mongoose");
 const validator = require("validator");
 const url = process.env.MONGODB_URL;
 
-mongooose.connect(url);
+mongoose.connect(url);
+
+mongoose.connection.on("connected", () => {
+  console.log("MongoDB connected successfully!");
+});
+
+mongoose.connection.on("error", (err) => {
+  console.error("MongoDB connection error:", err);
+});
+
+mongoose.connection.on("disconnected", () => {
+  console.log("MongoDB disconnected.");
+});
 
 // const me = new User({
 //   name: "Ankit",
