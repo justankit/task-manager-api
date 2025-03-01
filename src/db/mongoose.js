@@ -2,27 +2,26 @@ const mongoose = require("mongoose");
 const validator = require("validator");
 const url = process.env.MONGODB_URL;
 
-mongoose
-  .connect(url, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    tls: true, // Ensure TLS is enabled
-    tlsInsecure: false, // Avoid insecure connections
-  })
-  .then(() => console.log("Connected to MongoDB Atlas"))
-  .catch((err) => console.error("MongoDB connection error:", err));
-
-mongoose.connection.on("connected", () => {
-  console.log("MongoDB connected successfully!");
+mongoose.connect(url, {
+  // useNewUrlParser: true,
+  // useUnifiedTopology: true,
+  // tls: true, // Ensure TLS is enabled
+  // tlsInsecure: false, // Avoid insecure connections
 });
+// .then(() => console.log("Connected to MongoDB Atlas"))
+// .catch((err) => console.error("MongoDB connection error:", err));
 
-mongoose.connection.on("error", (err) => {
-  console.error("MongoDB connection error:", err);
-});
+// mongoose.connection.on("connected", () => {
+//   console.log("MongoDB connected successfully!");
+// });
 
-mongoose.connection.on("disconnected", () => {
-  console.log("MongoDB disconnected.");
-});
+// mongoose.connection.on("error", (err) => {
+//   console.error("MongoDB connection error:", err);
+// });
+
+// mongoose.connection.on("disconnected", () => {
+//   console.log("MongoDB disconnected.");
+// });
 
 // const me = new User({
 //   name: "Ankit",
